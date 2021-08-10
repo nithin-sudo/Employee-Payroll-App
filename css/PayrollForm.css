@@ -4,7 +4,7 @@ body {
 }
 
 .header {
-    padding: 15 px 1;
+    padding: 15px 0;
     background-color: #ffffff;
 }
 
@@ -20,7 +20,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 0px solid green;
+    border: 1px solid green;
     width: 80%;
 }
 
