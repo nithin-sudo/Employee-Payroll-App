@@ -4,7 +4,7 @@ salaryOutput.textContent = salary.value;
 salary.oninput = function() {
     salaryOutput.textContent = salary.value;
 };
-
+var regexName = RegExp('^[A-Z][a-z]{3,}$');
 class EmployeePayrollData {
     // Property
     name;
@@ -23,10 +23,11 @@ class EmployeePayrollData {
         this.notes = params[5];
     }
 
-    get getName() {
+
+    get Name() {
         return this.name;
     }
-    set setName(name) {
+    set Name(name) {
         this.name = name;
     }
 
@@ -37,31 +38,31 @@ class EmployeePayrollData {
         this._gender = gender;
     }
 
-    get getdepartment() {
+    get department() {
         return this.department;
     }
     set department(department) {
         this._department = department;
     }
 
-    get getSalary() {
+    get Salary() {
         return this.salary;
     }
-    set setSalary(salary) {
+    set Salary(salary) {
         this.salary = salary;
     }
 
     get getStartDate() {
         return this.startDate;
     }
-    set setStartDate(startDate) {
+    set StartDate(startDate) {
         this.startDate = startDate;
 
     }
     get getNotes() {
         return this.notes;
     }
-    set setNotes(notes) {
+    set Notes(notes) {
         this.notes = notes;
     }
 
