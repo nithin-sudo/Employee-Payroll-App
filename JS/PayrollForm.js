@@ -4,7 +4,7 @@ salaryOutput.textContent = salary.value;
 salary.oninput = function() {
     salaryOutput.textContent = salary.value;
 };
-var regexName = RegExp('^[A-Z][a-z]{3,}$');
+
 class EmployeePayrollData {
     // Property
     name;
@@ -24,11 +24,14 @@ class EmployeePayrollData {
     }
 
 
-    get Name() {
-        return this.name;
+    get name() {
+        return this._name;
     }
-    set Name(name) {
-        this.name = name;
+    set name(name) {
+        if (regexName.test(name))
+            this._name = name;
+        else
+            throw "Enter Capital First Letter and minimum should be 3 "
     }
 
     get gender() {
@@ -39,40 +42,54 @@ class EmployeePayrollData {
     }
 
     get department() {
-        return this.department;
+        return this._department;
     }
     set department(department) {
         this._department = department;
     }
 
-    get Salary() {
+    get salary() {
         return this.salary;
     }
-    set Salary(salary) {
+    set salary(salary) {
         this.salary = salary;
     }
 
-    get getStartDate() {
-        return this.startDate;
+    get startDate() {
+        return this._startDate;
     }
-    set StartDate(startDate) {
-        this.startDate = startDate;
+    set startDate(startDate) {
+        if (startDate <= new Date())
+            this._startDate = startDate;
+        else
+            throw "Invalid date."
 
     }
-    get getNotes() {
-        return this.notes;
+    get notes() {
+        return this._notes;
     }
-    set Notes(notes) {
-        this.notes = notes;
+    set notes(notes) {
+        this._notes = notes;
     }
 
     toString() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const empDate = this.startDate === undefined ? "undefined" :
+        const empDate = this._startDate === undefined ? "undefined" :
             new Date(this.startDate).toLocaleDateString("en-US", options);
         return " Name: " + this.name + "\n Gender: " + this.gender + "\n Department: " + this.department + "\n Salary: " + this.salary + "\n Start Date: " + empDate + "\n Notes: " + this.notes;
     }
 }
+
+const name = document.querySelector('#text')
+const textError = document.querySelector('.text-error')
+text.addEventListener('input', function() {
+    let nameRegex = RegExp("^[A-Z]{1}[a-z]{2,}$")
+    if (nameRegex.test(name.value)) {
+        textError.textContent = ""
+    } else {
+        textError.textContent = "Name is Incorrect"
+    }
+})
 
 function save() {
     try {
