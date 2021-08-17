@@ -24,15 +24,14 @@
         </div>
     </header>
     <div id="formId" class="form-content">
-
         <!--form content, and form class , on submit we are calling save event-->
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
+        <form action="#" class="form" onreset="resetForm()" onsubmit="save(event)">
             <!--UC 2-->
             <div class="form-head">Employee Payroll form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name:</label>
                 <input class="input" type="text" id="name" name="name" placeholder="your name.." required>
-                <error-output class="text-error" for="text"></error-output>
+                <error-output class="name-error" for="name"></error-output>
             </div>
             <!-- UC3 -->
             <!--profile input fields-->
@@ -167,6 +166,8 @@
     </div>
     <script defer src="../JS/PayrollForm.js"></script>
     <script defer src="../JS/EmployeePayrollData.js"></script>
+    <script src="../js/Utility.js"></script>
+    <script src="../js/site_properties.js"></script>
 </body>
 
 </html>
