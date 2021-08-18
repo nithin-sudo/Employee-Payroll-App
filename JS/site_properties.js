@@ -1,4 +1,6 @@
 let site_properties = {
-    home_page: "../pages/home.html",
-    add_emp_page: "../pages/Payroll_Form.html"
+    use_local_storage:"true",
+    home_page: "../pages/HomePage.html",
+    add_emp_page: "../pages/PayrollForm.html",
+    server_url: " http://localhost:3000/EmployeePayrollDB"
 }
